@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/dsBook",
+  base: "/dsBook/",
   title: "山雨光云的技术手册",
   description: "山雨光云的技术手册",
   
