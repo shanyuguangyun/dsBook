@@ -1,7 +1,7 @@
 module.exports = {
   base: "/dsBook/",
-  title: "山雨光云的技术手册",
-  description: "山雨光云的技术手册",
+  title: "山雨光云的小窝",
+  description: "山雨光云的小窝",
   
   themeConfig: {
     sidebarDepth: 3,

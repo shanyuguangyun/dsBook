@@ -1,8 +1,8 @@
 ---
 home: false
 heroImage: /work.png
-heroText: 山雨光云的技术手册
-tagline: 前后端、运维技术手册
+heroText: 山雨光云的小窝
+tagline: 山雨光云的小窝
 actionText: 打开笔记 →
 actionLink: /ds/xu/
 features:
