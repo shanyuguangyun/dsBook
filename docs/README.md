@@ -4,7 +4,7 @@ heroImage: /work.png
 heroText: 山雨光云的技术手册
 tagline: 前后端、运维技术手册
 actionText: 打开笔记 →
-actionLink: /ds/xu
+actionLink: /ds/xu/
 features:
 - title: 前端
   details: Html、Css、JavaScript、Vue相关技术栈

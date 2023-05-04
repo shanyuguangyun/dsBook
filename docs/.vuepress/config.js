@@ -6,8 +6,9 @@ module.exports = {
   themeConfig: {
     sidebarDepth: 3,
     nav: [
-      { text: "主页", link: "https://shanyuguangyun.github.io/webBook" },
+      { text: "主页", link: "https://shanyuguangyun.github.io/webBook/front/vue" },
       { text: "基础知识", link: "https://shanyuguangyun.github.io/gitBook" },
+      { text: "快乐生活", link: "https://shanyuguangyun.github.io/happyLife" },
       { text: "GitHub", link: "https://github.com/shanyuguangyun" },
     ],
     sidebar: [
@@ -17,7 +18,8 @@ module.exports = {
         sidebarDepth: 2, // 可选的, 默认值是 1
         children: [
           "/ds/xu", 
-          "/ds/linkList"
+          "/ds/linkList",
+          "/ds/tree"
         ],
       }
     ],
