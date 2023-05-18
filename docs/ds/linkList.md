@@ -123,16 +123,29 @@ public void remove(int i) {
 ```
 
 ### 翻转
+
+单链表的翻转方法有多种，如递归、循环、头插法
+
 ```java
-public Node<T> reverse() {
-    Node<T> cur = head;
-    Node<T> prev = null;
-    while (cur != null) {
-        Node<T> curNext = cur.next;
-        cur.next = prev;
-        prev = cur;
-        cur = curNext;
+public Node<Integer> headInsertReverse(Node<Integer> node) {
+    Node<Integer> head = new Node<>(null);
+    while (node != null) {
+        Node<Integer> next = node.next;
+        node.next = head;
+        head = node;
+        node = next;
     }
-    return prev;
+    return head;
 }
+public Node<Integer> recursiveReverse(Node<Integer> node) {
+    if (node == null || node.next == null) {
+        return node;
+    }
+    Node<Integer> reverseNode = recursiveReverse(node.next);
+    Node<Integer> next = node.next;
+    next.next = node;
+    node.next = null;
+    return reverseNode;
+}    
+
 ```
