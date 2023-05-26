@@ -141,8 +141,8 @@ public Node<Integer> recursiveReverse(Node<Integer> node) {
     if (node == null || node.next == null) {
         return node;
     }
-    Node<Integer> reverseNode = recursiveReverse(node.next);
     Node<Integer> next = node.next;
+    Node<Integer> reverseNode = recursiveReverse(node.next);
     next.next = node;
     node.next = null;
     return reverseNode;

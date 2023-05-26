@@ -8,7 +8,7 @@
     
     <meta name="description" content="山雨光云的小窝">
     
-    <link rel="preload" href="/dsBook/assets/css/0.styles.93b4f879.css" as="style"><link rel="preload" href="/dsBook/assets/js/app.3963f6db.js" as="script"><link rel="preload" href="/dsBook/assets/js/2.932d98c2.js" as="script"><link rel="preload" href="/dsBook/assets/js/9.b23e585b.js" as="script"><link rel="prefetch" href="/dsBook/assets/js/10.42b1e942.js"><link rel="prefetch" href="/dsBook/assets/js/3.f5f019f4.js"><link rel="prefetch" href="/dsBook/assets/js/4.ff00ca12.js"><link rel="prefetch" href="/dsBook/assets/js/5.aed2aa4a.js"><link rel="prefetch" href="/dsBook/assets/js/6.e56361dd.js"><link rel="prefetch" href="/dsBook/assets/js/7.91a26545.js"><link rel="prefetch" href="/dsBook/assets/js/8.dbf71f8b.js">
+    <link rel="preload" href="/dsBook/assets/css/0.styles.93b4f879.css" as="style"><link rel="preload" href="/dsBook/assets/js/app.74451061.js" as="script"><link rel="preload" href="/dsBook/assets/js/2.932d98c2.js" as="script"><link rel="preload" href="/dsBook/assets/js/9.997caec9.js" as="script"><link rel="prefetch" href="/dsBook/assets/js/10.42b1e942.js"><link rel="prefetch" href="/dsBook/assets/js/3.f5f019f4.js"><link rel="prefetch" href="/dsBook/assets/js/4.ff00ca12.js"><link rel="prefetch" href="/dsBook/assets/js/5.aed2aa4a.js"><link rel="prefetch" href="/dsBook/assets/js/6.21fafaab.js"><link rel="prefetch" href="/dsBook/assets/js/7.91a26545.js"><link rel="prefetch" href="/dsBook/assets/js/8.dbf71f8b.js">
     <link rel="stylesheet" href="/dsBook/assets/css/0.styles.93b4f879.css">
   </head>
   <body>
@@ -105,17 +105,27 @@
     <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> del <span class="token operator">=</span> preNode<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
     preNode<span class="token punctuation">.</span>next <span class="token operator">=</span> del<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></div><h3 id="翻转"><a href="#翻转" class="header-anchor">#</a> 翻转</h3> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
-    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> prev <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>cur <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> curNext <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
-        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> prev<span class="token punctuation">;</span>
-        prev <span class="token operator">=</span> cur<span class="token punctuation">;</span>
-        cur <span class="token operator">=</span> curNext<span class="token punctuation">;</span>
+</code></pre></div><h3 id="翻转"><a href="#翻转" class="header-anchor">#</a> 翻转</h3> <p>单链表的翻转方法有多种，如递归、循环、头插法</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> <span class="token function">headInsertReverse</span><span class="token punctuation">(</span><span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>node <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> next <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        node<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        head <span class="token operator">=</span> node<span class="token punctuation">;</span>
+        node <span class="token operator">=</span> next<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> prev<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> <span class="token function">recursiveReverse</span><span class="token punctuation">(</span><span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> node<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> reverseNode <span class="token operator">=</span> <span class="token function">recursiveReverse</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Node</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> next <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    next<span class="token punctuation">.</span>next <span class="token operator">=</span> node<span class="token punctuation">;</span>
+    node<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> reverseNode<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+
 </code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/dsBook/ds/xu.html" class="prev">
@@ -125,6 +135,6 @@
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/dsBook/assets/js/app.3963f6db.js" defer></script><script src="/dsBook/assets/js/2.932d98c2.js" defer></script><script src="/dsBook/assets/js/9.b23e585b.js" defer></script>
+    <script src="/dsBook/assets/js/app.74451061.js" defer></script><script src="/dsBook/assets/js/2.932d98c2.js" defer></script><script src="/dsBook/assets/js/9.997caec9.js" defer></script>
   </body>
 </html>
